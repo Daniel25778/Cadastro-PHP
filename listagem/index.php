@@ -1,4 +1,7 @@
 <?php
+    require('../database/conexao.php');
+    $sql = "SELECT * FROM tbl_pessoa";
+    $resultado = mysqli_query($conexao, $slq);
     include('../componentes/header.php');
 ?>
 
@@ -7,7 +10,7 @@
     <br/>
     
     <table class="table table-bordered">
-
+ 
     <thead>
         <tr>
             <th>ID</th>
