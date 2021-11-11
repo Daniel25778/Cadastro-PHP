@@ -31,4 +31,17 @@ switch ($_POST["acao"]) {
 
             break;
 
-    }
+    case "deletar":
+
+        $cod_pessoa = $_POST["cod_pessoa"];
+
+            $sqlDelete = "DELETE FROM tbl_pessoa WHERE cod_pessoa = $cod_pessoa";
+
+            $resultadoDelete = mysqli_query($conexao, $sqlDelete);
+
+            header("location: index.php");
+
+    break;
+
+
+}
