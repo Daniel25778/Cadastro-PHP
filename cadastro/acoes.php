@@ -5,7 +5,7 @@ session_start();
 require("../database/conexao.php");
 
 
-switch ($_POST["acao"]) {
+switch ($_REQUEST["acao"]) {
 
     case 'inserir':
 
@@ -42,6 +42,33 @@ switch ($_POST["acao"]) {
             header("location: index.php");
 
     break;
+       
+        case "editar":
+
+            $pessoaId = $_POST["cod_pessoa"];
+            $nome = $_POST["nome"];
+            $sobrenome = $_POST["sobrenome"];
+            $email = $_POST["email"];
+            $celular = $_POST["celular"];
+
+            /** MONTAGEM E EXECUÇÃO DA INSTRUÇÃO SQL DE UPDATE **/
+
+            $sqlUpdate = "UPDATE tbl_pessoa SET 
+                          nome = '$nome',
+                          sobrenome = '$sobrenome',
+                          email = '$email',
+                          celular = '$celular'
+                          
+                          WHERE cod_pessoa = $pessoaId";
+
+                          $resultado = mysqli_query($conexao, $sqlUpdate);
+
+                          header("location: ../listagem/index.php");
+
+           break;
+
+    }
 
 
-}
+
+

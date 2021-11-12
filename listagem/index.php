@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['usuarioId'])){
+        header("location: ../login/index.php");
+    }
     require('../database/conexao.php');
     $sql = "SELECT * FROM tbl_pessoa";
     $resultado = mysqli_query($conexao, $sql);
@@ -36,9 +40,8 @@
                             <th><?php echo $celular = $pessoa["celular"];?></th>
 
                             <th>
-                                <form action=""><button class="btn btn-warning">Editar</button></form>
-                               
-
+                                <button onclick="javascript: window.location = '../cadastro/editar.php?id=<?= $pessoa['cod_pessoa'] ?>'" class="btn btn-warning">Editar</button>
+                            
                                <form id="formDeletar" action="../cadastro/acoes.php" method="post" style="display: inline;">
                                     <input type="hidden" name="acao" value="deletar">
                                     <input type="hidden" name="cod_pessoa" id="cod_pessoa" value="<?php echo $id; ?>"> 

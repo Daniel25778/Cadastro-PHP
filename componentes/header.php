@@ -1,3 +1,7 @@
+<?php
+    $raiz = "/daniel-wilson/atividade_crud";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +12,8 @@
 
     <title>SISTEMA DE CADASTRO</title>
 
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../bootstrap/css/style.css">    
+    <link rel="stylesheet" href="<?= $raiz ?>/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= $raiz ?>/bootstrap/css/style.css">    
 
 </head>
 
@@ -22,21 +26,21 @@
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="../cadastro">Cadastrar</a>
+            <a class="nav-link" href="<?= $raiz ?>/cadastro">Cadastrar</a>
         </li>
 
     </ul>
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="../listagem">Listar</a>
+            <a class="nav-link" href="<?= $raiz ?>/listagem">Listar</a>
         </li>
         
     </ul>
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="../login/">Sair</a>
+            <a class="nav-link" href="<?= $raiz ?>/login/">Sair</a>
         </li>
         
     </ul>
