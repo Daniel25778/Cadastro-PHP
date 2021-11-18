@@ -20,11 +20,10 @@ function realizarLogin ($usuario, $senha, $conexao){
 
        
        echo "LOGADO";
+       $_SESSION["usuarioId"] = $dadosUsuario["idAdministrador"];
+       $_SESSION["nome"] = $dadosUsuario["nome"];
 
-       $_SESSION["usuarioId"] = $dadosUsuario["id"];
-       $_SESSION["senha"] = $dadosUsuario["nome"];
-
-     header("location: ../listagem/index.php");
+        header("location: ../listagem/index.php");
 
     }else{
         echo 'DEU ERRO OTARIO';

@@ -38,12 +38,15 @@
         
     </ul>
 
+    <form action="../login/acoeslogin.php" method="POST">
+
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
+            <input type="hidden" name="acao" value="login">
             <a class="nav-link" href="<?= $raiz ?>/login/">Sair</a>
         </li>
         
     </ul>
-    
+    </form>
 
 </nav>
