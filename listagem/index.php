@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['usuarioId'])){
-        header("location: ../login/index.php");
+        header("location: ../listagem/index.php");
     }
     require('../database/conexao.php');
     $sql = "SELECT * FROM tbl_pessoa";
