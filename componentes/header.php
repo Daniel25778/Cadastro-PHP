@@ -49,6 +49,7 @@
             <form  method="POST" action="../login/acoesLogin.php">
                 <input type="hidden" name="acao" value="logout">
                 <button class="btn btn-danger" type="submit">Sair</button>
+                
             </form>
             </li>
         
