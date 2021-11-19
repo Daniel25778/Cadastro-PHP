@@ -1,4 +1,5 @@
 <?php
+  
     $raiz = "/daniel-wilson/atividade_crud";
 ?>
 
@@ -18,7 +19,12 @@
 </head>
 
 <body>
-    
+  
+<?php
+    if(isset($_SESSION['usuarioId'])){
+        
+?>
+
 <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="">
         Cadastro
@@ -37,16 +43,20 @@
         </li>
         
     </ul>
+        <ul class="navbar-nav mr-auto">
 
-    <form action="../login/acoeslogin.php" method="POST">
-
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <input type="hidden" name="acao" value="login">
-            <a class="nav-link" href="<?= $raiz ?>/login/">Sair</a>
-        </li>
+            <li class="nav-item">
+            <form  method="POST" action="../login/acoesLogin.php">
+                <input type="hidden" name="acao" value="logout">
+                <button class="btn btn-danger" type="submit">Sair</button>
+            </form>
+            </li>
         
-    </ul>
-    </form>
+        </ul>
+    
+   
+   
 
 </nav>
+
+<?php } ?>

@@ -45,7 +45,7 @@ switch ($_POST['acao']) {
         
        session_destroy();
 
-       header("location: ../../produtos/index.php");
+       header("location: ./index.php");
 
         break;
     
